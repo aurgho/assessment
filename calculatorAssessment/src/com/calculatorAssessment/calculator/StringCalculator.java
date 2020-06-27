@@ -1,23 +1,21 @@
 package com.calculatorAssessment.calculator;
 
-
+import java.util.Arrays;
+import java.util.List;
 
 public class StringCalculator {
 
 	public static int add(String data) {
 		if (data.isEmpty())
 			return 0;
-		else if(data.contains(","))
-		{
+		else {
 			String[] numbers = data.split(",");
-			return StringtoInt(numbers[0])+StringtoInt(numbers[1]);
+			return convertToInt(Arrays.asList(numbers));
 		}
-		else
-			return StringtoInt(data);
 	}
-	
-	private static int StringtoInt(String num) {
-		return Integer.parseInt(num);
+
+	private static int convertToInt(List<String> list) {
+		return list.stream().mapToInt(Integer::parseInt).sum();
 	}
-	
+
 }
