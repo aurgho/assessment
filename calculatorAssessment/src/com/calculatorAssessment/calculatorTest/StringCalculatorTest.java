@@ -32,4 +32,9 @@ public class StringCalculatorTest {
 	public void returnSumOfAllNumbersDelimitedByNewLineOrComma() {
 		assertEquals(6, StringCalculator.add("1,2\n3"));
 	}
+	
+	@Test
+	public void returnSumOfAllNumbersUsingCustomDelimiter() {
+		assertEquals(3, StringCalculator.add("//;\n1;2"));
+	}
 }
