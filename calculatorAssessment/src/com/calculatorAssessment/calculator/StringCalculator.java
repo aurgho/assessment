@@ -1,5 +1,7 @@
 package com.calculatorAssessment.calculator;
 
+
+
 public class StringCalculator {
 
 	public static int add(String data) {
@@ -17,5 +19,5 @@ public class StringCalculator {
 	private static int StringtoInt(String num) {
 		return Integer.parseInt(num);
 	}
-
+	
 }

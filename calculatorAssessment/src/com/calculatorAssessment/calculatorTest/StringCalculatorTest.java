@@ -22,4 +22,9 @@ public class StringCalculatorTest {
 	public void returnSumOfTwoNumbersDelimitedByComma() {
 		assertEquals(3, StringCalculator.add("1,2"));
 	}
+	
+	@Test
+	public void returnSumOfAllNumbersDelimitedByComma() {
+		assertEquals(6, StringCalculator.add("1,2,3"));
+	}
 }
