@@ -1,7 +1,9 @@
 package com.calculatorAssessment.calculator;
 
-import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
+import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 public class StringCalculator {
 
@@ -9,8 +11,9 @@ public class StringCalculator {
 		if (data.isEmpty())
 			return 0;
 		else {
-			String[] numbers = data.split(",|\n");
-			return convertToInt(Arrays.asList(numbers));
+			List<String> list = Pattern.compile("\\p{Punct}|\\p{Space}").splitAsStream(data).collect(Collectors.toList());
+			list.removeAll(Collections.singleton(""));
+			return convertToInt(list);
 		}
 	}
 
