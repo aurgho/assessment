@@ -9,7 +9,7 @@ public class StringCalculator {
 		if (data.isEmpty())
 			return 0;
 		else {
-			String[] numbers = data.split(",");
+			String[] numbers = data.split(",|\n");
 			return convertToInt(Arrays.asList(numbers));
 		}
 	}
