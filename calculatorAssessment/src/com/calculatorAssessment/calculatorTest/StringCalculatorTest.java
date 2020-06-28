@@ -1,5 +1,6 @@
 package com.calculatorAssessment.calculatorTest;
 
+import static org.junit.Assert.fail;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
@@ -36,5 +37,15 @@ public class StringCalculatorTest {
 	@Test
 	public void returnSumOfAllNumbersUsingCustomDelimiter() {
 		assertEquals(3, StringCalculator.add("//;\n1;2"));
+	}
+	
+	@Test
+	public void returnExceptionIfNegative() {
+		try {
+			StringCalculator.add("-1,2,3");
+			fail("negatives not allowed : -1");
+		}catch (RuntimeException e) {
+
+		}
 	}
 }
